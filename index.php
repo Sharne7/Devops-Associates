@@ -26,10 +26,10 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "localhost";
-    $user = "root";
-    $pass = " ";
-    $db = "dahlah";
+    $host = "devopsaa.database.windows.net";
+    $user = "devops";
+    $pass = "Thape3487# ";
+    $db = "db1";
 
     try {
         $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
@@ -45,8 +45,8 @@
             $job = $_POST['job'];
             $date = date("Y-m-d");
             // Insert data
-            $sql_insert = "INSERT INTO tes (name, email, job, date) 
-                        VALUES (submit,load_data)";
+            $sql_insert = "INSERT INTO gg (name, email, job, date) 
+                        VALUES ('$name', '$email', '$job', '$date')";
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $name);
             $stmt->bindValue(2, $email);
@@ -60,7 +60,7 @@
         echo "<h3>Your're registered!</h3>";
     } else if (isset($_POST['load_data'])) {
         try {
-            $sql_select = "SELECT * FROM dahlah";
+            $sql_select = "SELECT * FROM gg";
             $stmt = $conn->query($sql_select);
             $registrants = $stmt->fetchAll(); 
             if(count($registrants) > 0) {
