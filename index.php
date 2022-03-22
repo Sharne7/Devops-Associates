@@ -28,8 +28,8 @@
  <?php
     $host = "devopsaa.database.windows.net";
     $user = "devops";
-    $pass = "Thape3487# ";
-    $db = "db1";
+    $pass = "Thape3487#";
+    $db = "devopsaa";
 
     try {
         $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
